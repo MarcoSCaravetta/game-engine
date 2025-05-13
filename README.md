@@ -1,5 +1,6 @@
 Flowchart
 
+```mermaid
 ---
 config:
   layout: dagre
@@ -14,3 +15,4 @@ flowchart TD
     n7@{ shape: in-out}
     n4@{ shape: in-out}
     n5@{ shape: in-out}
+```
