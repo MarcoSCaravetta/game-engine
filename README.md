@@ -18,3 +18,37 @@ flowchart TD
     n4@{ shape: in-out}
     n5@{ shape: in-out}
 ```
+
+```mermaid
+---
+  config:
+    layout: dagre
+    look: classic
+    theme: default
+---
+  classDiagram
+  direction TB
+      class SceneryObject {
+      }
+      class GameObject {
+	      +coordinates
+	      +orientation
+	      +velocity
+	      +state
+	      +move()
+	      +change_state()
+	      +render()
+      }
+      class CollisoinObject {
+	      +hitbox
+	      +check_collision() ?
+      }
+      class PhysicsObject {
+	      +mass
+	      +react() ?
+      }
+
+      GameObject <|-- SceneryObject
+      GameObject <|-- CollisoinObject
+      CollisoinObject <|-- PhysicsObject
+```
