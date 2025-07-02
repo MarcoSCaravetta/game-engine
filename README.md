@@ -4,6 +4,7 @@ Flowchart
 ---
 config:
   layout: dagre
+  look: classic
 ---
 flowchart TD
     n1["Game Engine <br>"] --> n3["Graphics Engine"] & n6["Non-graphical output <br>"]
