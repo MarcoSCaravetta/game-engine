@@ -21,34 +21,49 @@ flowchart TD
 
 ```mermaid
 ---
-  config:
+config:
     layout: dagre
     look: classic
     theme: default
 ---
-  classDiagram
-  direction TB
-      class SceneryObject {
-      }
-      class GameObject {
-	      +coordinates
-	      +orientation
-	      +velocity
-	      +state
-	      +move()
-	      +change_state()
-	      +render()
-      }
-      class CollisoinObject {
-	      +hitbox
-	      +check_collision() ?
-      }
-      class PhysicsObject {
-	      +mass
-	      +react() ?
-      }
+classDiagram
+direction TB
+    class SceneryObject {
+    }
+    class GameObject {
+        +coordinates
+        +orientation
+	+velocity
+	+state
+	+move()
+	+change_state()
+	+render()
+    }
+    class CollisoinObject {
+    	+hitbox
+	+check_collision() ?
+    }
+    class PhysicsObject {
+      +mass
+      +react() ?
+    }
 
-      GameObject <|-- SceneryObject
-      GameObject <|-- CollisoinObject
-      CollisoinObject <|-- PhysicsObject
+    note for SceneryObject "cosmetic foilage,
+    skybox,
+    background,
+    costmetic items,
+    decals,
+    etc"
+    note for CollisoinObject "player,
+    npc,
+    lighting,
+    camera,
+    interactable items,
+    level,
+    interactable foilage,
+    etc"
+
+    GameObject <|-- SceneryObject
+    GameObject <|-- CollisoinObject
+    CollisoinObject <|-- PhysicsObject
 ```
